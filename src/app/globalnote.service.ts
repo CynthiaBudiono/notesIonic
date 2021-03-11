@@ -14,10 +14,7 @@ export class GlobalnoteService {
   public getnotes(){
     return this.arrayn;
   }
-
-  // public setnotes(arr : any[][]){
-  //   this.arrayn = arr;
-  // }
+  
   public tambahnotes(tn){
     this.arrayn.push(tn);
   }

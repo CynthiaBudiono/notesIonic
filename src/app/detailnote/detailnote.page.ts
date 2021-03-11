@@ -19,11 +19,8 @@ export class DetailnotePage implements OnInit {
   ngOnInit() {
     var nomor = this.route.snapshot.paramMap.get("nomor");
     this.detailjudul = this.globalvar.arrayn[nomor].getjudul()
-    this.isicatatan = this.globalvar.arrayn[nomor].gettgl()
-    this.tglcreate = this.globalvar.arrayn[nomor].getisi()  
-    // this.detailjudul = this.globalvar.getnotes()[nomor][0]
-    // this.isicatatan = this.globalvar.getnotes()[nomor][1]
-    // this.tglcreate = this.globalvar.getnotes()[nomor][2]  
+    this.isicatatan = this.globalvar.arrayn[nomor].getisi()
+    this.tglcreate = this.globalvar.arrayn[nomor].gettgl()  
   }
 
   // goback(){
