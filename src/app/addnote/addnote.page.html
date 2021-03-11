@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons> 
+    <ion-title>Create Note</ion-title>
+    
+    <ion-buttons slot="primary">
+      <ion-button (click)="save()" color="secondary">
+        <ion-icon slot="icon-only" name="save"></ion-icon>
+      </ion-button>
+      <ion-button (click)="cancel()" color="danger">
+        <ion-icon slot="icon-only" name="close-sharp"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-item>
+      <ion-label position="fixed">Judul</ion-label>
+      <ion-input type="text" [(ngModel)]="txtjudul" placeholder="Resolusi 2021"></ion-input>
+    </ion-item>
+
+		<ion-item>
+      <ion-label position="fixed">Date</ion-label>
+      <ion-input type="date" [(ngModel)]="txtdate"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="fixed">Isi</ion-label>
+      <ion-textarea rows="24" cols="20" placeholder="bisa masak kue..." [(ngModel)]="txtisi"></ion-textarea>
+    </ion-item>
+
+</ion-content>
