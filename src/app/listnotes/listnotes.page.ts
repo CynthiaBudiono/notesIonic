@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { GlobalnoteService } from '../globalnote.service';
@@ -10,8 +11,16 @@ import { Note } from '../note';
 })
 export class ListnotesPage implements OnInit {
 
-  constructor(private router: Router, public globalvar: GlobalnoteService) { 
+  constructor(private router: Router, public globalvar: GlobalnoteService, public http: HttpClient) { 
     // this.notes = this.globalvar.getnotes();
+
+    // this.http.post('http://192.168.1.2/ionic/dbnotes.php', {
+    //     tipe: 'getdata'
+    //   }).subscribe((response) => {
+    //     console.log("selesai kirim"); 
+    //     console.log(response);
+    //   });
+
   }
 
   notes;

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { GlobalnoteService } from '../globalnote.service';
 import { Note } from '../note';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-addnote',
@@ -9,8 +10,9 @@ import { Note } from '../note';
   styleUrls: ['./addnote.page.scss'],
 })
 export class AddnotePage implements OnInit {
+  
 
-  constructor(private router: Router, public globalvar: GlobalnoteService) { 
+  constructor(private router: Router, public globalvar: GlobalnoteService, public http: HttpClient) { 
     // this.notes = this.globalvar.getnotes();
   }
 
@@ -49,12 +51,26 @@ export class AddnotePage implements OnInit {
       // this.notes[this.lnotes][2] = this.txtdate;
       // this.notes[this.lnotes][3] = 0;
       // this.globalvar.setnotes(this.notes);
-      // // alert("get NOTESSS : " + this.globalvar.getnotes());
-      // for (var i = 0; i < this.lnotes; i++) {
-      //   console.log(
-      //     this.notes[i][0] + "-" + this.notes[i][1] + "-" + this.notes[i][2]
-      //   );
-      // }
+
+      // this.http.post('http://192.168.1.6/ionic/dbnotes.php', {
+      //   tipe: 'insert',
+      //   judul: this.txtjudul,
+      //   isi: this.txtisi,
+      //   tanggal: this.txtdate 
+      // }).subscribe((response) => {
+      //   console.log(response);
+      // });
+
+      console.log("start kirim"); 
+      this.http.post('http://192.168.1.2/ionic/dbnotes.php', {
+        tipe: 'insert',
+        judul: this.txtjudul,
+        isi: this.txtisi,
+        tanggal: this.txtdate 
+      }).subscribe((response) => {
+        console.log("selesai kirim"); 
+        console.log(response);
+      });
 
       this.router.navigate(["/listnotes/"]);
     }

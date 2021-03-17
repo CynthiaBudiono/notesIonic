@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { GlobalnoteService } from '../globalnote.service';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-home',
